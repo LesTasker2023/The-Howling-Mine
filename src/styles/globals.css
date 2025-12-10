@@ -1,0 +1,128 @@
+/**
+ * Global Styles - Editorial Brutalist
+ * CSS Custom Properties for cross-file usage
+ */
+
+:root {
+  /* Colors */
+  --ink: #0c0c0e;
+  --ink-raised: #141418;
+  --ink-elevated: #1c1c22;
+  --ink-surface: #24242c;
+
+  --paper: #f5f5f0;
+  --paper-dim: #c8c8c0;
+  --chalk: #8a8a82;
+  --slate: #5a5a55;
+
+  --ember: #e8a832;
+  --ember-light: #f0b844;
+  --ember-glow: rgba(232, 168, 50, 0.25);
+  --ember-subtle: rgba(232, 168, 50, 0.08);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Animation */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --timing-fast: 150ms;
+  --timing-normal: 300ms;
+
+  /* Layout */
+  --max-width: 1200px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--paper);
+  background: var(--ink);
+  min-height: 100dvh;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--paper);
+}
+
+p {
+  color: var(--chalk);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--ember);
+  color: var(--ink);
+}
+
+/* Remove default button styles */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main content wrapper */
+main {
+  min-height: calc(100dvh - 200px);
+}

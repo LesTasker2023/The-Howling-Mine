@@ -1,0 +1,313 @@
+/* Jobs Page Styles */
+
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6) var(--space-12);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-10) var(--space-4) var(--space-8);
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(232, 168, 50, 0.15);
+  color: var(--ember);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--paper);
+  margin-bottom: var(--space-4);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--chalk);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Intro Section */
+.intro {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+  border-top: 1px solid rgba(245, 245, 240, 0.1);
+}
+
+.intro h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--paper);
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.introCard {
+  text-align: center;
+  padding: var(--space-6);
+  background: rgba(245, 245, 240, 0.03);
+  border: 1px solid rgba(245, 245, 240, 0.08);
+  border-radius: 4px;
+}
+
+.introIcon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.introCard h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--paper);
+  margin-bottom: var(--space-2);
+}
+
+.introCard p {
+  font-size: 0.875rem;
+  color: var(--chalk);
+  line-height: 1.6;
+}
+
+/* Categories Section */
+.categories {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+.categories h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--paper);
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 968px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.categoryCard {
+  padding: var(--space-6);
+  background: rgba(245, 245, 240, 0.02);
+  border: 1px solid rgba(245, 245, 240, 0.1);
+  border-radius: 4px;
+  transition: border-color var(--timing-fast) var(--ease-out), background var(--timing-fast) var(--ease-out);
+}
+
+.categoryCard:hover {
+  border-color: rgba(232, 168, 50, 0.3);
+  background: rgba(245, 245, 240, 0.04);
+}
+
+.categoryIcon {
+  font-size: 2rem;
+  margin-bottom: var(--space-3);
+}
+
+.categoryCard h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--paper);
+  margin-bottom: var(--space-2);
+}
+
+.categoryDesc {
+  font-size: 0.875rem;
+  color: var(--chalk);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.categoryMeta {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.difficulty,
+.weapons {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.75rem;
+  border-radius: 2px;
+}
+
+.difficulty {
+  background: rgba(232, 168, 50, 0.15);
+  color: var(--ember);
+}
+
+.weapons {
+  background: rgba(245, 245, 240, 0.08);
+  color: var(--chalk);
+}
+
+/* Tips Section */
+.tips {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+  border-top: 1px solid rgba(245, 245, 240, 0.1);
+}
+
+.tips h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: var(--space-6);
+}
+
+.tipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tipsList li {
+  position: relative;
+  padding: var(--space-4) 0 var(--space-4) var(--space-6);
+  font-size: 0.9375rem;
+  color: var(--chalk);
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(245, 245, 240, 0.08);
+}
+
+.tipsList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--ember);
+}
+
+.tipsList li:last-child {
+  border-bottom: none;
+}
+
+.tipsList li strong {
+  color: var(--paper);
+}
+
+/* CTA Section */
+.cta {
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+  background: linear-gradient(180deg, transparent 0%, rgba(232, 168, 50, 0.05) 100%);
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: var(--space-3);
+}
+
+.cta p {
+  font-size: 1rem;
+  color: var(--chalk);
+  margin-bottom: var(--space-6);
+}
+
+.ctaButtons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  background: var(--ember);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background var(--timing-fast) var(--ease-out), transform var(--timing-fast) var(--ease-out);
+}
+
+.ctaPrimary:hover {
+  background: var(--ember-light);
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(245, 245, 240, 0.3);
+  border-radius: 4px;
+  transition: border-color var(--timing-fast) var(--ease-out), background var(--timing-fast) var(--ease-out);
+}
+
+.ctaSecondary:hover {
+  border-color: rgba(245, 245, 240, 0.6);
+  background: rgba(245, 245, 240, 0.05);
+}

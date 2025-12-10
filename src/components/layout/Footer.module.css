@@ -1,0 +1,122 @@
+/* Footer Component Styles */
+
+.footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(245, 245, 240, 0.1);
+  padding: var(--space-12) 0 var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-8) 0 var(--space-6);
+  }
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+.brand {
+  margin-bottom: var(--space-10);
+}
+
+.logoDiamond {
+  width: 16px;
+  height: 16px;
+  background: var(--ember);
+  transform: rotate(45deg);
+  margin-bottom: var(--space-4);
+}
+
+.name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--paper);
+  margin-bottom: var(--space-2);
+}
+
+.tagline {
+  color: var(--chalk);
+  font-size: 0.875rem;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+@media (max-width: 768px) {
+  .columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.column h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: var(--space-4);
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  margin-bottom: var(--space-2);
+}
+
+.column a {
+  color: var(--chalk);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color var(--timing-fast) var(--ease-out);
+}
+
+.column a:hover {
+  color: var(--paper);
+}
+
+.bottom {
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(245, 245, 240, 0.1);
+}
+
+.copyright {
+  color: var(--slate);
+  font-size: 0.75rem;
+  margin-bottom: var(--space-1);
+}
+
+.legal {
+  color: var(--slate);
+  font-size: 0.625rem;
+  opacity: 0.7;
+}
