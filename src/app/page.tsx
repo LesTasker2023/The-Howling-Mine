@@ -53,9 +53,7 @@ export default function HomePage() {
             Earn up to <strong>$18/month</strong> with free weapons, free
             community resources, and real support to help you succeed
           </p>
-          <div className={styles.noCreditCard}>
-            No Credit Card Required!
-          </div>
+          <div className={styles.noCreditCard}>No Credit Card Required!</div>
           <div className={styles.ctas}>
             <a href={siteConfig.signup} className={styles.ctaPrimary}>
               Create Free Account

@@ -7,7 +7,7 @@ export const siteConfig = {
   name: 'The Howling Mine',
   tagline: 'Get Paid to Play',
   description:
-    "Earn real money at The Howling Mine in Entropia Universe. Free weapons, daily income from the Job System, and zero deposit required.",
+    "Earn real money playing games at The Howling Mine. Get paid up to $18/month with free weapons, zero deposit required. Withdraw real cash to your bank.",
 
   // URLs
   url: 'https://www.thehowlingmine.com',
@@ -20,15 +20,25 @@ export const siteConfig = {
 
   // SEO defaults
   defaultKeywords: [
+    // High-intent money queries
+    'earn money playing games',
+    'games that pay real money',
+    'get paid to play games',
+    'free games that pay real money',
+    'make money gaming',
+    'play to earn games',
+    'mmo that pays real money',
+    // Brand terms
     'howling mine',
     'entropia universe',
-    'get paid to play',
-    'entropia jobs',
     'neverdie',
     'club neverdie',
+    // Feature terms
+    'entropia jobs',
     'entropia mining',
     'real cash economy',
-    'mmo earn money',
+    'free mmo no deposit',
+    'withdraw real money mmo',
   ],
 
   // Schema.org
