@@ -31,9 +31,10 @@
 .logoDiamond {
   width: 16px;
   height: 16px;
-  background: var(--ember);
+  background: var(--neon);
   transform: rotate(45deg);
   margin-bottom: var(--space-4);
+  box-shadow: var(--neon-glow);
 }
 
 .name {
@@ -49,7 +50,6 @@
 .tagline {
   color: var(--chalk);
   font-size: 0.875rem;
-  max-width: 320px;
   line-height: 1.6;
 }
 
@@ -102,6 +102,34 @@
 
 .column a:hover {
   color: var(--paper);
+}
+
+.features {
+  margin-bottom: var(--space-8);
+}
+
+.features h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: var(--space-4);
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+}
+
+.features li {
+  color: var(--chalk);
+  font-size: 0.875rem;
 }
 
 .bottom {

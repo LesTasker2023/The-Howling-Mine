@@ -1,19 +1,19 @@
-import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
-import { OrganizationSchema, WebSiteSchema } from '@/components/seo/JsonLd';
-import { Header, Footer } from '@/components/layout';
-import { siteConfig } from '@/config/site';
-import '@/styles/globals.css';
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import { OrganizationSchema, WebSiteSchema } from "@/components/seo/JsonLd";
+import { Header, Footer } from "@/components/layout";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0c0c0e',
-  width: 'device-width',
+  themeColor: "#0c0c0e",
+  width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
     images: [
       {
-        url: '/og-image.png',
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -50,11 +50,11 @@ export const metadata: Metadata = {
 
   // Twitter
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
     creator: siteConfig.twitter,
-    images: ['/og-image.png'],
+    images: ["/og-image.png"],
   },
 
   // Robots
@@ -64,21 +64,21 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 
   // Icons
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
 
   // Manifest
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
 
   // Alternate languages (if needed later)
   alternates: {
@@ -86,13 +86,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
 
         {/* DNS prefetch for Discord CDN */}
         <link rel="dns-prefetch" href="https://cdn.discordapp.com" />

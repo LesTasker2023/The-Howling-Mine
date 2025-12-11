@@ -7,11 +7,11 @@ export const siteConfig = {
   name: 'The Howling Mine',
   tagline: 'Get Paid to Play',
   description:
-    "Earn real money at Jon NEVERDIE's Howling Mine in Entropia Universe. Free weapons, daily income from the Job System, and zero deposit required.",
+    "Earn real money at The Howling Mine in Entropia Universe. Free weapons, daily income from the Job System, and zero deposit required.",
 
   // URLs
   url: 'https://www.thehowlingmine.com',
-  discord: 'https://discord.gg/Mb4BTchpgK',
+  discord: 'https://discord.gg/NnkPwamsDQ',
   signup: 'https://account.entropiauniverse.com/create-account?ref=howlingmine',
 
   // Social
@@ -36,7 +36,7 @@ export const siteConfig = {
     name: 'The Howling Mine',
     logo: '/logo.png',
     sameAs: [
-      'https://discord.gg/Mb4BTchpgK',
+      'https://discord.gg/NnkPwamsDQ',
       'https://www.youtube.com/@NEVERDIE',
       'https://x.com/JonNEVERDIE',
     ],

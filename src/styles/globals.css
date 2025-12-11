@@ -1,24 +1,38 @@
 /**
- * Global Styles - Editorial Brutalist
- * CSS Custom Properties for cross-file usage
+ * Global Styles - Industrial Neon
+ * The Howling Mine: Machinery, broken neon, metal & grime
  */
 
 :root {
-  /* Colors */
-  --ink: #0c0c0e;
-  --ink-raised: #141418;
-  --ink-elevated: #1c1c22;
-  --ink-surface: #24242c;
+  /* Base - Industrial dark metals */
+  --ink: #0a0a0c;
+  --ink-raised: #111114;
+  --ink-elevated: #18181c;
+  --ink-surface: #1f1f24;
+  --rust: #2a2420;
 
-  --paper: #f5f5f0;
-  --paper-dim: #c8c8c0;
-  --chalk: #8a8a82;
-  --slate: #5a5a55;
+  /* Text */
+  --paper: #e8e8e4;
+  --paper-dim: #b8b8b0;
+  --chalk: #787872;
+  --slate: #4a4a46;
 
-  --ember: #e8a832;
-  --ember-light: #f0b844;
-  --ember-glow: rgba(232, 168, 50, 0.25);
-  --ember-subtle: rgba(232, 168, 50, 0.08);
+  /* Primary - Neon Orange-Yellow (flickering signage) */
+  --neon: #ffc800;
+  --neon-dim: #e6b400;
+  --neon-glow: rgba(255, 200, 0, 0.4);
+  --neon-subtle: rgba(255, 200, 0, 0.08);
+  --neon-flicker: rgba(255, 200, 0, 0.6);
+
+  /* Accents - Pink & Blue neon */
+  --neon-pink: #ff2d6a;
+  --neon-pink-glow: rgba(255, 45, 106, 0.4);
+  --neon-blue: #00d4ff;
+  --neon-blue-glow: rgba(0, 212, 255, 0.4);
+
+  /* Warning/danger */
+  --hazard: #ff6b00;
+  --hazard-glow: rgba(255, 107, 0, 0.3);
 
   /* Typography */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -48,6 +62,41 @@
   --max-width: 1200px;
 }
 
+/* Neon flicker animation */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.8;
+  }
+  94% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.9;
+  }
+  97% {
+    opacity: 1;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px var(--neon-glow))
+      drop-shadow(0 0 20px var(--neon-subtle));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px var(--neon-glow))
+      drop-shadow(0 0 30px var(--neon-glow));
+  }
+}
+
 /* Reset */
 *,
 *::before,
@@ -73,19 +122,40 @@ body {
   min-height: 100dvh;
 }
 
-/* Grain texture overlay */
+/* Industrial grain/noise texture */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.04;
   pointer-events: none;
   z-index: 9999;
 }
 
+/* Scanline effect */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
 /* Typography defaults */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
@@ -103,13 +173,13 @@ a {
 
 /* Focus states */
 :focus-visible {
-  outline: 2px solid var(--ember);
+  outline: 2px solid var(--neon);
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background: var(--ember);
+  background: var(--neon);
   color: var(--ink);
 }
 

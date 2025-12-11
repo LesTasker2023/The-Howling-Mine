@@ -4,9 +4,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(12, 12, 14, 0.95);
+  background: rgba(10, 10, 12, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(245, 245, 240, 0.1);
+  border-bottom: 1px solid rgba(255, 184, 0, 0.15);
 }
 
 .nav {
@@ -38,7 +38,8 @@
 }
 
 .logo:hover {
-  color: var(--ember);
+  color: var(--neon);
+  text-shadow: 0 0 20px var(--neon-glow);
 }
 
 @media (max-width: 640px) {
@@ -50,13 +51,17 @@
 .logoDiamond {
   width: 12px;
   height: 12px;
-  background: var(--ember);
+  background: var(--neon);
   transform: rotate(45deg);
-  transition: transform var(--timing-fast) var(--ease-out);
+  box-shadow: 0 0 8px var(--neon-glow), 0 0 16px var(--neon-subtle);
+  transition: transform var(--timing-fast) var(--ease-out),
+    box-shadow var(--timing-fast) var(--ease-out);
+  animation: flicker 4s infinite;
 }
 
 .logo:hover .logoDiamond {
   transform: rotate(225deg);
+  box-shadow: 0 0 12px var(--neon-glow), 0 0 24px var(--neon-glow);
 }
 
 .links {
@@ -96,13 +101,14 @@
 }
 
 .link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--ember);
+  background: var(--neon);
+  box-shadow: 0 0 6px var(--neon-glow);
 }
 
 @media (max-width: 640px) {
@@ -113,19 +119,24 @@
 
 .cta {
   padding: var(--space-2) var(--space-4);
-  background: var(--ember);
+  background: var(--neon);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 2px;
-  transition: background var(--timing-fast) var(--ease-out), transform var(--timing-fast) var(--ease-out);
+  box-shadow: 0 0 10px var(--neon-glow), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: background var(--timing-fast) var(--ease-out),
+    transform var(--timing-fast) var(--ease-out),
+    box-shadow var(--timing-fast) var(--ease-out);
 }
 
 .cta:hover {
-  background: var(--ember-light);
+  background: var(--neon-dim);
   transform: translateY(-1px);
+  box-shadow: 0 0 20px var(--neon-glow), 0 4px 20px var(--neon-subtle),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 640px) {

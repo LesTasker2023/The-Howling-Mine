@@ -3,31 +3,31 @@
  * High-impact landing page optimized for SEO and conversions
  */
 
-import { siteConfig } from '@/config/site';
-import { FAQSchema } from '@/components/seo/JsonLd';
-import styles from './page.module.css';
+import { siteConfig } from "@/config/site";
+import { FAQSchema } from "@/components/seo/JsonLd";
+import styles from "./page.module.css";
 
-// FAQ data for both schema and display
+// FAQ data for both schema and display - sourced from Project Delta
 const faqs = [
   {
-    question: 'Do I need to deposit money to start?',
+    question: "Do I need to deposit money to start?",
     answer:
-      "No. The Howling Mine provides free weapons and equipment. You can start earning from day one with zero deposit required.",
+      "No! Create your free avatar, complete beginner missions on Setesh to score gear, and head to the Job Broker at Howling Mine. You can play without ever spending a dime.",
   },
   {
-    question: 'How do I get paid?',
+    question: "What good is a job that only pays $18/month?",
     answer:
-      'Entropia Universe uses PED (Project Entropia Dollars) which converts to USD at 10:1. You can withdraw earnings directly to your bank account.',
+      "You already spend hours watching Netflix or playing games — and you pay for the privilege. At Howling Mine, we flip that model. You get paid to play. The job system supports you while you level up skills and learn the economy. In many countries, $18/month makes a real difference.",
   },
   {
-    question: 'What is the Job System?',
+    question: "Can I actually withdraw real money?",
     answer:
-      'The Job System provides daily kill missions with guaranteed PED rewards. Complete jobs at the Howling Mine to earn consistent income.',
+      "Absolutely. Entropia Universe has processed tens of millions USD in player withdrawals since 2003. The in-game currency (PED) has a fixed exchange rate of 10 PED = $1 USD. Withdraw directly to your bank account.",
   },
   {
-    question: 'How much can I earn?',
+    question: "How do I get to Howling Mine?",
     answer:
-      "Earnings vary based on time invested and skills developed. New players can earn small amounts daily, while experienced players can earn significantly more.",
+      "New players start on Setesh tutorial moon. After learning the basics, you have two options: (1) Take the FREE daily shuttle from any major spaceport, or (2) Purchase 6 Teleporter Tokens for instant travel. Note: 150kg weight limit for teleportation.",
   },
 ];
 
@@ -38,75 +38,92 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.heroBg} />
+        <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
-          <div className={styles.badge}>Entropia Universe</div>
+          <div className={styles.badge}>
+            <span className={styles.badgeLine} />
+            JOIN 20+ YEARS OF REAL CASH GAMING
+            <span className={styles.badgeLine} />
+          </div>
           <h1 className={styles.title}>
-            Get Paid
-            <br />
-            <span className={styles.accent}>To Play</span>
+            GET <span className={styles.accent}>PAID</span> TO PLAY
           </h1>
           <p className={styles.subtitle}>
-            Earn real money at The Howling Mine. Free weapons provided, no deposit required. Start
-            earning from day one.
+            Earn up to <strong>$18/month</strong> with free weapons, free
+            community resources, and real support to help you succeed
           </p>
+          <div className={styles.noCreditCard}>
+            No Credit Card Required!
+          </div>
           <div className={styles.ctas}>
             <a href={siteConfig.signup} className={styles.ctaPrimary}>
               Create Free Account
+              <span className={styles.ctaArrow}>→</span>
             </a>
             <a href="/guide" className={styles.ctaSecondary}>
-              How It Works
+              See How It Works
             </a>
           </div>
-        </div>
-        <div className={styles.heroVisual}>
-          <div className={styles.orb} />
-        </div>
-      </section>
-
-      {/* Value Props */}
-      <section className={styles.features}>
-        <div className={styles.feature}>
-          <div className={styles.featureIcon}>💰</div>
-          <h3>Real Cash Economy</h3>
-          <p>PED converts to USD at 10:1. Withdraw earnings directly to your bank account.</p>
-        </div>
-        <div className={styles.feature}>
-          <div className={styles.featureIcon}>🎯</div>
-          <h3>Daily Jobs</h3>
-          <p>Complete missions for guaranteed rewards. No gambling, just work and earn.</p>
-        </div>
-        <div className={styles.feature}>
-          <div className={styles.featureIcon}>🔧</div>
-          <h3>Free Equipment</h3>
-          <p>Start with provided weapons and gear. Zero investment required to begin.</p>
-        </div>
-        <div className={styles.feature}>
-          <div className={styles.featureIcon}>🌐</div>
-          <h3>Global Community</h3>
-          <p>Join thousands of players worldwide. Active Discord with 24/7 support.</p>
+          <div className={styles.trustItems}>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              Zero startup cost
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              Free community resources
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              Real mentors on Discord
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              Withdraw to bank account
+            </div>
+          </div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className={styles.howItWorks}>
-        <h2 className={styles.sectionTitle}>Start Earning in 3 Steps</h2>
+        <h2 className={styles.sectionTitle}>Start Earning in 4 Steps</h2>
         <div className={styles.steps}>
           <div className={styles.step}>
             <div className={styles.stepNumber}>1</div>
-            <h3>Create Account</h3>
-            <p>Sign up for free at Entropia Universe. Takes less than 5 minutes.</p>
+            <h3>Create Free Account</h3>
+            <p>
+              Sign up for Entropia Universe - completely free. Complete the
+              Setesh tutorial to learn the basics.
+            </p>
           </div>
           <div className={styles.stepArrow}>→</div>
           <div className={styles.step}>
             <div className={styles.stepNumber}>2</div>
             <h3>Travel to Howling Mine</h3>
-            <p>Use the teleporter to reach the mining facility on FOMA. We&apos;ll guide you.</p>
+            <p>
+              Take the FREE daily shuttle from any spaceport, or use 6
+              Teleporter Tokens for instant travel.
+            </p>
           </div>
           <div className={styles.stepArrow}>→</div>
           <div className={styles.step}>
             <div className={styles.stepNumber}>3</div>
-            <h3>Start Working</h3>
-            <p>Pick up free weapons, take jobs from the terminal, and start earning PED.</p>
+            <h3>Visit the Job Broker</h3>
+            <p>
+              Find &quot;The Employer&quot; NPC inside Howling Mine Space
+              Terminal. Accept daily missions.
+            </p>
+          </div>
+          <div className={styles.stepArrow}>→</div>
+          <div className={styles.step}>
+            <div className={styles.stepNumber}>4</div>
+            <h3>Hunt &amp; Get Paid</h3>
+            <p>
+              Clear AI bots using FREE provided weapons and ammo. Earn 2 PED
+              ($0.20 USD) daily.
+            </p>
           </div>
         </div>
         <div className={styles.stepsCta}>
@@ -119,16 +136,16 @@ export default function HomePage() {
       {/* Stats Section */}
       <section className={styles.stats}>
         <div className={styles.stat}>
-          <div className={styles.statValue}>$6M+</div>
-          <div className={styles.statLabel}>Paid to Players</div>
+          <div className={styles.statValue}>$0</div>
+          <div className={styles.statLabel}>Required Investment</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statValue}>20+</div>
-          <div className={styles.statLabel}>Years Running</div>
+          <div className={styles.statValue}>Free</div>
+          <div className={styles.statLabel}>Daily Shuttle Travel</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statValue}>24/7</div>
-          <div className={styles.statLabel}>Discord Support</div>
+          <div className={styles.statValue}>$18</div>
+          <div className={styles.statLabel}>Max Monthly Earnings</div>
         </div>
       </section>
 

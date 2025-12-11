@@ -1,0 +1,21 @@
+{
+    "name": "The Howling Mine",
+    "short_name": "Howling Mine",
+    "description": "Earn real money at The Howling Mine in Entropia Universe. Get paid to play.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0c0c0e",
+    "theme_color": "#0c0c0e",
+    "icons": [
+        {
+            "src": "/favicon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

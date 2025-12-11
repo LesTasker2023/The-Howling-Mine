@@ -3,12 +3,12 @@
  * Sticky header with logo and nav links
  */
 
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { siteConfig } from '@/config/site';
-import styles from './Header.module.css';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
+import styles from "./Header.module.css";
 
 export function Header() {
   const pathname = usePathname();
@@ -22,11 +22,13 @@ export function Header() {
         </Link>
 
         <div className={styles.links}>
-          {siteConfig.nav.map(item => (
+          {siteConfig.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`${styles.link} ${pathname === item.href ? styles.active : ''}`}
+              className={`${styles.link} ${
+                pathname === item.href ? styles.active : ""
+              }`}
             >
               {item.label}
             </Link>
@@ -39,7 +41,12 @@ export function Header() {
           >
             Discord
           </a>
-          <a href={siteConfig.signup} className={styles.cta} target="_blank" rel="noopener noreferrer">
+          <a
+            href={siteConfig.signup}
+            className={styles.cta}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Start Earning
           </a>
         </div>

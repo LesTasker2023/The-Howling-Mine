@@ -16,14 +16,15 @@
 .badge {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
-  background: rgba(90, 90, 85, 0.3);
-  color: var(--chalk);
+  background: rgba(230, 255, 0, 0.15);
+  color: var(--neon);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   border-radius: 2px;
   margin-bottom: var(--space-4);
+  text-shadow: var(--neon-glow);
 }
 
 .title {
@@ -106,7 +107,14 @@
   padding: var(--space-12) var(--space-6);
 }
 
-.ores h2 {
+/* Asteroids Section */
+.asteroids {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+.asteroids h2 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 700;
@@ -115,16 +123,16 @@
   margin-bottom: var(--space-8);
 }
 
-.oreTable {
+.asteroidTable {
   background: rgba(245, 245, 240, 0.02);
   border: 1px solid rgba(245, 245, 240, 0.1);
   border-radius: 4px;
   overflow: hidden;
 }
 
-.oreHeader {
+.asteroidHeader {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
   padding: var(--space-4);
   background: rgba(245, 245, 240, 0.05);
   font-family: var(--font-sans);
@@ -135,63 +143,123 @@
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 580px) {
-  .oreHeader {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+  .asteroidHeader {
+    grid-template-columns: 1fr 1fr 2fr;
   }
 
-  .oreHeader span:last-child {
+  .asteroidHeader span:last-child {
     display: none;
   }
 }
 
-.oreRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  padding: var(--space-4);
-  border-top: 1px solid rgba(245, 245, 240, 0.06);
+@media (max-width: 480px) {
+  .asteroidHeader {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .asteroidHeader span:nth-child(3) {
+    display: none;
+  }
 }
 
-@media (max-width: 580px) {
-  .oreRow {
+.asteroidRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  padding: var(--space-4);
+  border-top: 1px solid rgba(245, 245, 240, 0.06);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .asteroidRow {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .asteroidRow {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.oreName {
-  font-weight: 500;
+.asteroidType {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.asteroidType strong {
   color: var(--paper);
+  font-size: 0.9375rem;
 }
 
-.oreRarity {
-  font-size: 0.875rem;
+.asteroidType small {
+  color: var(--chalk);
+  font-size: 0.75rem;
 }
 
-.oreRarity[data-rarity="common"] { color: var(--chalk); }
-.oreRarity[data-rarity="uncommon"] { color: #4ade80; }
-.oreRarity[data-rarity="rare"] { color: #60a5fa; }
-.oreRarity[data-rarity="very rare"] { color: #a78bfa; }
-
-.oreUse {
+.asteroidDifficulty {
   font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.asteroidDifficulty[data-difficulty="easy"] {
+  color: #4ade80;
+}
+.asteroidDifficulty[data-difficulty="medium"] {
+  color: #fbbf24;
+}
+.asteroidDifficulty[data-difficulty="hard"] {
+  color: #f87171;
+}
+
+.asteroidLocation {
+  font-size: 0.8125rem;
   color: var(--chalk);
 }
 
-@media (max-width: 580px) {
-  .oreUse {
+@media (max-width: 768px) {
+  .asteroidLocation {
     display: none;
   }
 }
 
-/* Equipment Section */
-.equipment {
+.asteroidLoot {
+  font-size: 0.8125rem;
+  color: var(--chalk);
+}
+
+@media (max-width: 480px) {
+  .asteroidLoot {
+    display: none;
+  }
+}
+
+.asteroidNote {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--chalk);
+  line-height: 1.6;
+}
+
+.asteroidNote strong {
+  color: #fbbf24;
+}
+
+/* Ships Section */
+.ships {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-12) var(--space-6);
   border-top: 1px solid rgba(245, 245, 240, 0.1);
 }
 
-.equipment h2 {
+.ships h2 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 700;
@@ -200,90 +268,135 @@
   margin-bottom: var(--space-10);
 }
 
-.equipGrid {
+.shipGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .equipGrid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
+@media (max-width: 968px) {
+  .shipGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.equipCard {
+@media (max-width: 580px) {
+  .shipGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shipCard {
   padding: var(--space-6);
   background: rgba(245, 245, 240, 0.02);
   border: 1px solid rgba(245, 245, 240, 0.1);
   border-radius: 4px;
 }
 
-.equipCard h3 {
+.shipHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+}
+
+.shipHeader h3 {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.125rem;
   color: var(--paper);
-  margin-bottom: var(--space-2);
 }
 
-.equipCard p {
-  font-size: 0.875rem;
-  color: var(--chalk);
-  line-height: 1.6;
-  margin-bottom: var(--space-3);
-}
-
-.equipPrice {
+.shipType {
   display: inline-block;
   padding: var(--space-1) var(--space-2);
-  background: rgba(232, 168, 50, 0.15);
-  color: var(--ember);
+  background: rgba(230, 255, 0, 0.15);
+  color: var(--neon);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 500;
   border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Warning Section */
-.warning {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-6);
-}
-
-.warningContent {
-  padding: var(--space-6);
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  border-radius: 4px;
-}
-
-.warningContent h3 {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 1rem;
-  color: #fbbf24;
-  margin-bottom: var(--space-2);
-}
-
-.warningContent p {
+.shipNotes {
   font-size: 0.875rem;
   color: var(--chalk);
   line-height: 1.6;
+  margin-bottom: var(--space-4);
 }
 
-/* Coming Soon Section */
-.coming {
+.shipMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--chalk);
+}
+
+.shipObtain {
+  opacity: 0.8;
+}
+
+/* Tips Section */
+.tips {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+.tips h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: var(--space-6);
+}
+
+.tipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tipsList li {
+  position: relative;
+  padding: var(--space-4) 0 var(--space-4) var(--space-6);
+  font-size: 0.9375rem;
+  color: var(--chalk);
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(245, 245, 240, 0.08);
+}
+
+.tipsList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--neon);
+  text-shadow: var(--neon-glow);
+}
+
+.tipsList li:last-child {
+  border-bottom: none;
+}
+
+.tipsList li strong {
+  color: var(--paper);
+}
+
+/* CTA Section */
+.cta {
   text-align: center;
   padding: var(--space-16) var(--space-6);
-  background: linear-gradient(180deg, transparent 0%, rgba(232, 168, 50, 0.05) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(230, 255, 0, 0.05) 100%
+  );
 }
 
-.coming h2 {
+.cta h2 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 700;
@@ -291,7 +404,7 @@
   margin-bottom: var(--space-3);
 }
 
-.coming p {
+.cta p {
   font-size: 1rem;
   color: var(--chalk);
   margin-bottom: var(--space-6);
@@ -319,19 +432,24 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-3) var(--space-6);
-  background: var(--ember);
+  background: var(--neon);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 4px;
-  transition: background var(--timing-fast) var(--ease-out), transform var(--timing-fast) var(--ease-out);
+  text-shadow: none;
+  box-shadow: var(--neon-glow);
+  transition: background var(--timing-fast) var(--ease-out),
+    transform var(--timing-fast) var(--ease-out),
+    box-shadow var(--timing-fast) var(--ease-out);
 }
 
 .ctaPrimary:hover {
-  background: var(--ember-light);
+  background: #f0ff4d;
   transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(230, 255, 0, 0.7), 0 0 50px rgba(230, 255, 0, 0.4);
 }
 
 .ctaSecondary {
@@ -347,10 +465,45 @@
   text-decoration: none;
   border: 1px solid rgba(245, 245, 240, 0.3);
   border-radius: 4px;
-  transition: border-color var(--timing-fast) var(--ease-out), background var(--timing-fast) var(--ease-out);
+  transition: border-color var(--timing-fast) var(--ease-out),
+    background var(--timing-fast) var(--ease-out);
 }
 
 .ctaSecondary:hover {
   border-color: rgba(245, 245, 240, 0.6);
   background: rgba(245, 245, 240, 0.05);
+}
+
+/* Warning Section */
+.warning {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+.warningContent {
+  background: rgba(255, 180, 0, 0.1);
+  border: 1px solid rgba(255, 180, 0, 0.3);
+  border-left: 4px solid #ffb400;
+  border-radius: 4px;
+  padding: var(--space-6);
+}
+
+.warningContent h3 {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffb400;
+  margin-bottom: var(--space-3);
+}
+
+.warningContent p {
+  color: var(--chalk);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.warningContent strong {
+  color: var(--paper);
 }
